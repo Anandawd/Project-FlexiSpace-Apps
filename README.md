@@ -1,6 +1,6 @@
-# Office Space Rental Project
+# Flexi Space Project
 
-This repository contains the source code for the Office Space Rental website, which is divided into two main folders:
+This repository contains the source code for the Flexi Space website, which is divided into two main folders:
 
 - `office-rent-fe`: The frontend, built with React and TypeScript.
 - `office-rent-be`: The backend, built with Laravel.
@@ -77,4 +77,4 @@ Ensure you have the following installed on your system:
 - Ensure the backend and frontend servers are running simultaneously for proper functionality.
 - If you encounter issues, make sure all dependencies are installed and the necessary ports are available.
 
-Enjoy exploring the Office Space Rental Project!
+Enjoy exploring the Flex Space Project!
