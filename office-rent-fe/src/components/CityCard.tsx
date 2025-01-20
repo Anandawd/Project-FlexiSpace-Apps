@@ -3,6 +3,8 @@ import { City } from "../types/type";
 
 export default function CityCard({ city }: CityCardProps) {
   const baseUrl = baseStorageUrl;
+  console.log("baseURL", baseUrl);
+  // const baseUrl = "http://127.0.0.1:8000/storage";
 
   return (
     <div className="card">

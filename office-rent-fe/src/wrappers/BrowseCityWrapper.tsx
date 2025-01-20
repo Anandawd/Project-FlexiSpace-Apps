@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import CityCard from "../components/CityCard";
 import apiClient from "../services/apiService";
 import { City } from "../types/type";
 
-export default function BrowseCityWrapper({ title }) {
+interface BrowseCityWrapperProps {
+  title: ReactNode;
+}
+
+export default function BrowseCityWrapper({ title }: BrowseCityWrapperProps) {
   const [cities, setcities] = useState<City[]>([]);
   const [loading, setloading] = useState(true);
   const [error, seterror] = useState<string | null>(null);
@@ -14,6 +18,7 @@ export default function BrowseCityWrapper({ title }) {
     apiClient
       .get("/cities")
       .then((response) => {
+        console.log("data cities:", response.data.data);
         setcities(response.data.data);
         setloading(false);
       })

@@ -48,13 +48,13 @@ class BookingTransactionController extends Controller
         $bookingTransaction = BookingTransaction::create($validatedData);
 
         // mengirim notif melalui sms atau whatsapp
-        $sid = getenv("TWILIO_ACCOUNT_SID");
-        $token = getenv("TWILIO_AUTH_TOKEN");
-        $twilio = new Client($sid, $token);
+        // $sid = getenv("TWILIO_ACCOUNT_SID");
+        // $token = getenv("TWILIO_AUTH_TOKEN");
+        // $twilio = new Client($sid, $token);
 
-        $messageBody = "Hi {$bookingTransaction->name}, terima kasih telah booking kantor di Flexi Space.\n\n";
-        $messageBody .= "Pesanan kantor {$bookingTransaction->officeSpace->name} Anda sedang kami proses dengan Booking TRX ID: {$bookingTransaction->booking_trx_id}.\n\n";
-        $messageBody .= "Kami akan menginformasikan kembali status pemesanan Anda secepat mungkin.";
+        // $messageBody = "Hi {$bookingTransaction->name}, terima kasih telah booking kantor di Flexi Space.\n\n";
+        // $messageBody .= "Pesanan kantor {$bookingTransaction->officeSpace->name} Anda sedang kami proses dengan Booking TRX ID: {$bookingTransaction->booking_trx_id}.\n\n";
+        // $messageBody .= "Kami akan menginformasikan kembali status pemesanan Anda secepat mungkin.";
 
         // $message = $twilio->messages->create(
         //     // "+{$bookingTransaction->phone_number}"
@@ -65,8 +65,8 @@ class BookingTransactionController extends Controller
         //     ]
         // );
 
-        $toNumber = $bookingTransaction->phone_number;
-        $fromNumber = getenv("TWILIO_PHONE_NUMBER");
+        // $toNumber = $bookingTransaction->phone_number;
+        // $fromNumber = getenv("TWILIO_PHONE_NUMBER");
 
         // $message = $twilio->messages->create(
         //     "whatsapp:{$toNumber}",

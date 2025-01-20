@@ -9,18 +9,10 @@ export default function Navbar() {
         </Link>
 
         <ul className="flex items-center gap-[50px] w-fit">
-          <Link to={`/`}>
-            <a href="">Browse</a>
-          </Link>
-          <Link to={`/popular`}>
-            <a href="">Popular</a>
-          </Link>
-          <Link to={`/cities`}>
-            <a href="">Cities</a>
-          </Link>
-          <Link to={`/check-booking`}>
-            <a href="view-booking-details.html">My Booking</a>
-          </Link>
+          <Link to={`/`}>Browse</Link>
+          <Link to={`/popular`}>Popular</Link>
+          <Link to={`/cities`}>Cities</Link>
+          <Link to={`/check-booking`}>My Booking</Link>
         </ul>
         <a
           href="#"

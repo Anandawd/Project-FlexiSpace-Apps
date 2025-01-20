@@ -1,10 +1,16 @@
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import OfficeCard from "../components/OfficeCard";
 import apiClient from "../services/apiService";
 import { Office } from "../types/type";
 
-export default function BrowseOfficeWrapper({ title }) {
+interface BrowseOfficeWrapperProps {
+  title: ReactNode;
+}
+
+export default function BrowseOfficeWrapper({
+  title,
+}: BrowseOfficeWrapperProps) {
   const [offices, setoffices] = useState<Office[]>([]);
   const [loading, setloading] = useState(true);
   const [error, seterror] = useState<string | null>(null);
@@ -14,6 +20,7 @@ export default function BrowseOfficeWrapper({ title }) {
       .get("/offices")
       .then((response) => {
         setoffices(response.data.data);
+        console.log(response.data.data);
         setloading(false);
       })
       .catch((error) => {
